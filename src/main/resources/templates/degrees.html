@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <th:block th:replace="fragments :: src-head"></th:block>
+    <title>Corsi di Laurea</title>
+</head>
+
+<body>
+    <th:block th:replace="fragments :: navbar(corsi)"></th:block>
+    
+      <div th:if="${#lists.isEmpty(DegreesList)}">
+	  	<h1>Lista non disponibile, riprovare più tardi</h1>
+	  </div>
+	  <div th:unless="${#lists.isEmpty(DegreesList)}">
+	        <table class="table my-3">
+	          <thead>
+	            <tr>
+	              <th>Nome</th>
+	              <th>Tipologia</th>
+	              <th>Indirizzo</th>
+	              <th>Dipartimento</th>
+	              <th>E-Mail</th>
+	              <th>Sito Web</th>
+	            </tr>
+	          </thead>
+	          <tbody>
+	            <tr class="align-middle" th:each="d : ${DegreesList}">
+	              <td class="bg-danger text-light" th:text="${d.name}"></td>
+	              <td class=" text-dark" th:text="${d.level}"></td>
+	              <td th:text="${d.address}"></td>
+	              <td>
+	              <a th:href="@{|/dipartimenti/${d.getDepartments.id}|}" th:text="${d.getDepartments.name}"></a>
+	              </td>
+	              <td th:text="${d.email}"></td>
+	              <td th:text="${d.website}"></td>
+	            </tr>
+	          </tbody>
+	        </table>
+	   </div>
+</body>
+</html>

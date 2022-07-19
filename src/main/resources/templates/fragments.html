@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+	<!-- Head resources -->
+  	<th:block th:fragment="src-head">
+  		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  	<th:block>
+  	
+  </head>
+  <body>
+	<!-- navbar -->
+	<nav th:fragment="navbar(current)" class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          
+          <div class="row align-items-center">
+        	<!-- Logo -->
+        	<div class="col-1">
+	          <a class="navbar-brand" href="/">
+	   			<img class="w-100"src="/img/R.jpg" alt="">
+	          </a>
+          	</div>
+          	
+            <!-- Links -->
+            <div class="col-11">
+	            <ul class="navbar-nav text-uppercase">
+	              <li class="nav-item">
+	                <a class="nav-link" th:classAppend="${current == 'dipartimenti'} ? active : not-active" href="/dipartimenti">Dipartimenti</a>
+	              </li>
+	              <li class="nav-item">
+	                <a class="nav-link" th:classAppend="${current == 'corsi'} ? active : not-active" href="/corsi">Corsi di Laurea</a>
+	              </li>
+	              <li class="nav-item">
+	              </li>
+	            </ul>
+            </div>
+          </div>
+        </div>		
+	</nav>
+  </body>
+</html>

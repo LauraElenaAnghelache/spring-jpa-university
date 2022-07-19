@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+
+  <head>
+    <th:block th:replace="fragments :: src-head"></th:block>
+	<title>Dipartimenti</title>
+  </head>
+  
+  <body>
+    <th:block th:replace="fragments :: navbar(dipartimenti)"></th:block>
+
+	  <div th:if="${#lists.isEmpty(DepartmentsList)}">
+	  	<h1>Lista non disponibile, riprovare più tardi</h1>
+	  </div>
+	  <div th:unless="${#lists.isEmpty(DepartmentsList)}">
+	        <table class="table my-3">
+	          <thead>
+	            <tr>
+	              <th>Nome</th>
+	              <th>Indirizzo</th>
+	              <th>Telefono</th>
+	              <th>Indirizzo mail</th>
+	              <th>Sito web</th>
+	              <th>Capodipartimento</th>
+	            </tr>
+	          </thead>
+	          <tbody>
+	            <tr class="align-middle" th:each="d : ${DepartmentsList}">
+	              <td class="bg-light text-light">
+	              		<a th:href="@{|/dipartimenti/${d.id}|}" th:text="${d.name}"></a>
+	              </td>
+	              <td th:text="${d.address}"></td>
+	              <td th:text="${d.phone}"></td>
+	              <td th:text="${d.email}"></td>
+	              <td th:text="${d.website}"></td>
+	              <td th:text="${d.headOfDepartment}"></td>
+	            </tr>
+	          </tbody>
+	        </table>
+	   </div>
+  </body>
+</html>
