@@ -11,7 +11,7 @@
   </head>
   <body>
 	<!-- navbar -->
-	<nav th:fragment="navbar(current)" class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav th:fragment="navbar(current)" class="navbar navbar-expand-lg navbar-light bg-danger">
         <div class="container-fluid">
           
           <div class="row align-items-center">
@@ -25,11 +25,11 @@
             <!-- Links -->
             <div class="col-11">
 	            <ul class="navbar-nav text-uppercase">
-	              <li class="nav-item">
-	                <a class="nav-link" th:classAppend="${current == 'dipartimenti'} ? active : not-active" href="/dipartimenti">Dipartimenti</a>
+	              <li class="nav-item ">
+	                <a class="nav-link text-light fw-bolder" th:classAppend="${current == 'dipartimenti'} ? active : not-active" href="/dipartimenti">Dipartimenti</a>
 	              </li>
 	              <li class="nav-item">
-	                <a class="nav-link" th:classAppend="${current == 'corsi'} ? active : not-active" href="/corsi">Corsi di Laurea</a>
+	                <a class="nav-link text-light fw-bolder" th:classAppend="${current == 'corsi'} ? active : not-active" href="/corsi">Corsi di Laurea</a>
 	              </li>
 	              <li class="nav-item">
 	              </li>
