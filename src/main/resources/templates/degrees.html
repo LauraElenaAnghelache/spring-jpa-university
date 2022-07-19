@@ -30,7 +30,7 @@
 	              <td class=" text-dark" th:text="${d.level}"></td>
 	              <td th:text="${d.address}"></td>
 	              <td>
-	              <a th:href="@{|/dipartimenti/${d.getDepartments.id}|}" th:text="${d.getDepartments.name}"></a>
+	              <a th:href="@{|/dipartimenti/${d.getDepartments.id}|}" class="link-danger" th:text="${d.getDepartments.name}"></a>
 	              </td>
 	              <td th:text="${d.email}"></td>
 	              <td th:text="${d.website}"></td>
