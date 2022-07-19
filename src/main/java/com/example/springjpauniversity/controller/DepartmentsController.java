@@ -25,7 +25,6 @@ package com.example.springjpauniversity.controller;
 			model.addAttribute("DepartmentsList" , repo.findAll());
 			return "departments";
 		}
-		
 		@GetMapping("/{departmentId}")
 		public String departmentsDetail(Model model,
 				@PathVariable(name = "departmentId") Integer departmentsPrimaryKey)
@@ -35,4 +34,5 @@ package com.example.springjpauniversity.controller;
 			return "departmentsDetail";
 		}
 	}
+	
 
