@@ -13,7 +13,7 @@
 	  	<h1>Lista non disponibile, riprovare più tardi</h1>
 	  </div>
 	  <div th:unless="${#lists.isEmpty(TeachersList)}">
-	        <table class="table my-3">
+	        <table class="table my-3 fst-italic">
 	          <thead>
 	            <tr class="text-center">
 	              <th>Insegnante</th>
@@ -24,10 +24,10 @@
 	          </thead>
 	          <tbody>
 	            <tr class="align-middle" th:each="tl : ${TeachersList}">
-	              <td class="text-center bg-danger">
+	              <td class="text-center bg-dark fst-italic">
 	              		<a class="text-decoration-none fw-bold text-light" th:href="@{|/insegnanti/${tl.id}|}" th:text="${tl.getFullName()}"></a>
 	              </td>
-	              <td class="bg-light text-danger text-center" th:text="${tl.phone}"></td>
+	              <td class="bg-light text-dark text-center fst-italic fw-bolder" th:text="${tl.phone}"></td>
 	              <td th:text="${tl.email}"></td>
 	              <td class="text-center" th:text="${tl.officeAddress} + ' - Stanza ' + ${tl.officeNumber}"></td>
 	            </tr>

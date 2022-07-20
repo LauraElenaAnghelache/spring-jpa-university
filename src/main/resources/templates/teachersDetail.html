@@ -9,13 +9,13 @@
 <body>
 	<th:block th:replace="fragments :: navbar(insegnanti)"></th:block>
 
-	<div class="container">
+	<div class="container fst-italic">
 		<h1 th:text="${teacher.getFullName()}"></h1>
 	</div>
-	<div class="container">
+	<div class="container fst-italic">
 			<table class="table my-3">
 	          <thead>
-	            <tr class="text-center">
+	            <tr class="text-center fst-italic">
 	              <th>Telefono</th>
 	              <th>E-Mail</th>
 	              <th>Indirizzo Ufficio - Num.</th>
@@ -23,16 +23,16 @@
 	          </thead>
 	          <tbody>
 	            <tr class="align-middle ">
-	              <td class="fw-bold text-danger text-center" th:text="${teacher.phone}"></td>
-	              <td class="fw-bold text-danger text-center" th:text="${teacher.email}"></td>
-	              <td class="fw-bold text-danger text-center" th:text="${teacher.officeAddress} + ' - Stanza ' + ${teacher.officeNumber}"></td>
+	              <td class="fw-bold text-dark text-center" th:text="${teacher.phone}"></td>
+	              <td class="fw-bold text-dark text-center" th:text="${teacher.email}"></td>
+	              <td class="fw-bold text-dark text-center" th:text="${teacher.officeAddress} + ' - Stanza ' + ${teacher.officeNumber}"></td>
 	            </tr>
 	          </tbody>
 	        </table>	
 	</div>
-	<div class="container">
+	<div class="container fst-italic">
 		<h3 th:text="'Corsi tenuti da ' + ${teacher.getFullName()} + ':'"></h3>
-		 <table class="table my-3">
+		 <table class="table my-3 fst-italic">
 	          <thead>
 	            <tr>
 	              <th>Nome</th>
@@ -45,8 +45,8 @@
 	          </thead>
 	          <tbody>
 	            <tr class="align-middle" th:each="tc : ${teacher.course}">
-	              <td class="fw-bold bg-danger text-light" th:text="${tc.name}"></td>
-	              <td class=" text-light" th:text="${tc.description}"></td>
+	              <td class="fw-bold bg-dark text-light" th:text="${tc.name}"></td>
+	              <td class=" text-dark" th:text="${tc.description}"></td>
 	              <td class="text-center" th:text="${tc.period}"></td>
 	              <td class="text-center" th:text="${tc.year}"></td>
 	              <td class="fw-bold text-center" th:text="${tc.cfu}"></td>

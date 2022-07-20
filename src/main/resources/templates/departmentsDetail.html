@@ -9,10 +9,10 @@
 <body>
 	<th:block th:replace="fragments :: navbar(dipartimenti)"></th:block>
 
-	<div class="container">
+	<div class="container fst-italic">
 		<h1 th:text="${department.name}"></h1>
 	</div>
-	<div class="container">
+	<div class="container fst-italic">
 		<table class="table my-3">
 	          <thead>
 	            <tr>
@@ -24,7 +24,7 @@
 	            </tr>
 	          </thead>
 	          <tbody>
-	            <tr class="align-middle fw-bolder text-danger bg-light">
+	            <tr class="align-middle fw-bolder text-dark bg-light fst-italic">
 	              <td th:text="${department.address}"></td>
 	              <td th:text="${department.phone}"></td>
 	              <td th:text="${department.email}"></td>
@@ -34,9 +34,9 @@
 	          </tbody>
 	     </table>
 	</div>
-	<div class="container">
+	<div class="container fst-italic">
 		<h3>Corsi di Laurea:</h3>
-		 <table class="table my-3">
+		 <table class="table my-3 fst-italic">
 	          <thead>
 	            <tr>
 	              <th>Nome</th>
@@ -48,7 +48,7 @@
 	          </thead>
 	          <tbody>
 	            <tr class="align-middle" th:each="d : ${department.degree}">
-	              <td class="bg-danger text-light" th:text="${d.name}"></td>
+	              <td class="bg-dark text-light fst-italic" th:text="${d.name}"></td>
 	              <td class="" th:text="${d.level}"></td>
 	              <td th:text="${d.address}"></td>
 	              <td th:text="${d.email}"></td>

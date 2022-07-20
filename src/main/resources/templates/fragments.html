@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
-	<!-- Head resources -->
   	<th:block th:fragment="src-head">
   		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,29 +9,26 @@
   	
   </head>
   <body>
-	<!-- navbar -->
-	<nav th:fragment="navbar(current)" class="navbar navbar-expand-lg navbar-light bg-danger">
+	
+	<nav th:fragment="navbar(current)" class="navbar navbar-expand-lg navbar-light bg-dark">
         <div class="container-fluid">
-          
           <div class="row align-items-center">
-        	<!-- Logo -->
         	<div class="col-1">
 	          <a class="navbar-brand" href="/">
-	   			<img class="w-100"src="/img/R.jpg" alt="">
+	   			<img class="w-75"src="/img/logo.png" alt="">
+	   			<form class="d-flex" role="search">
 	          </a>
           	</div>
-          	
-            <!-- Links -->
-            <div class="col-11">
+          	<div class="col-11">
 	            <ul class="navbar-nav text-uppercase">
 	              <li class="nav-item ">
-	                <a class="nav-link text-light fw-bolder" th:classAppend="${current == 'dipartimenti'} ? active : not-active" href="/dipartimenti">Dipartimenti</a>
+	                <a class="nav-link text-light fst-italic fs-5" th:classAppend="${current == 'dipartimenti'} ? active : not-active" href="/dipartimenti">Dipartimenti</a>
 	              </li>
 	              <li class="nav-item">
-	                <a class="nav-link text-light fw-bolder" th:classAppend="${current == 'corsi'} ? active : not-active" href="/corsi">Corsi di Laurea</a>
+	                <a class="nav-link text-light fst-italic fs-5" th:classAppend="${current == 'corsi'} ? active : not-active" href="/corsi">Corsi di Laurea</a>
 	              </li>
 	              <li class="nav-item">
-	                <a class="nav-link text-light fw-bolder" th:classAppend="${current == 'insegnanti'} ? active : not-active" href="/insegnanti">Insegnanti</a>
+	                <a class="nav-link text-light fst-italic fs-5" th:classAppend="${current == 'insegnanti'} ? active : not-active" href="/insegnanti">Insegnanti</a>
 	              </li>
 	              <li class="nav-item">
 	              </li>
@@ -42,4 +38,4 @@
         </div>		
 	</nav>
   </body>
-</html>
+</html> 

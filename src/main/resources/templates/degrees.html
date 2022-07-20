@@ -13,7 +13,7 @@
 	  	<h1>Lista non disponibile, riprovare più tardi</h1>
 	  </div>
 	  <div th:unless="${#lists.isEmpty(DegreesList)}">
-	        <table class="table my-3">
+	        <table class="table my-3 fst-italic">
 	          <thead>
 	            <tr>
 	              <th>Nome</th>
@@ -26,11 +26,11 @@
 	          </thead>
 	          <tbody>
 	            <tr class="align-middle" th:each="d : ${DegreesList}">
-	              <td class="bg-danger text-light" th:text="${d.name}"></td>
+	              <td class="bg-dark text-light fst-italic" th:text="${d.name}"></td>
 	              <td class=" text-dark" th:text="${d.level}"></td>
 	              <td th:text="${d.address}"></td>
 	              <td>
-	              <a th:href="@{|/dipartimenti/${d.getDepartments.id}|}" class="link-danger" th:text="${d.getDepartments.name}"></a>
+	              <a th:href="@{|/dipartimenti/${d.getDepartments.id}|}" class="link-dark" th:text="${d.getDepartments.name}"></a>
 	              </td>
 	              <td th:text="${d.email}"></td>
 	              <td th:text="${d.website}"></td>
