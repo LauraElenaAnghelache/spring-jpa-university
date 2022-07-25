@@ -2,15 +2,18 @@
 <html lang="it">
 
 <head>
+<link th:href="@{/css/style.css}" rel="stylesheet">
     <th:block th:replace="fragments :: src-head"></th:block>
     <title>Hogwarts University</title>
 </head>
 <body>
-    <th:block th:replace="fragments :: navbar(current)"></th:block>
-    
+    <th:block th:replace="fragments :: navbar(current)"></th:block> 
     <section>
+    
     <p class="h1 text-center text-dark fst-italic pt-3 pb-3">Benvenuti all'Università di Hogwarts</p>
     <div class="container d-flex justify-content-center py-2 shadow-lg p-3 mb-3 bg-body rounded">
+    <body>
+</body>
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">

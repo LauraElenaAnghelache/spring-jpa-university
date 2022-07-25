@@ -32,18 +32,10 @@ package com.example.springjpauniversity.controller;
 		public String teachersDetail(Model model,
 				@PathVariable(name = "teacherId") Integer teachersPrimaryKey)
 		{
-			Optional<Teachers> queryResult = repo.findById(teachersPrimaryKey);
-			if (queryResult.isPresent())
-			{
 				Teachers curDep = repo.findById(teachersPrimaryKey).get();
 				model.addAttribute("teacher", curDep);
 				return "teachersDetail";
 
-			}
-			else
-			{
-				throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Country not found");
-			}
 		}
 	}
 
